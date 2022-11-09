@@ -33,6 +33,10 @@ build-release: pkgconfig
 build-debug: pkgconfig
 	cargo build
 
+# https://mozilla.github.io/firefox-browser-architecture/experiments/2017-09-06-rust-on-ios.html
+build-ios: pkgconfig
+	cargo lipo --release
+
 build: build-$(MODE)
 
 install:
